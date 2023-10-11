@@ -10,12 +10,13 @@ const Users = () => {
 
   useEffect(() => {
     dispatch(getUsers());
-  }, [dispatch]);
+  }, []);
 
   const handleDeleteUser = (e, userId) => {
     e.preventDefault()
     dispatch(deleteUser(userId))
   };
+  console.log(userDetails.user)
 
   return (
     <>

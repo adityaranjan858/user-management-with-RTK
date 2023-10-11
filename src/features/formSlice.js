@@ -6,7 +6,7 @@ const initialState = {
     loading : false,
     error : "",
     searchData : [],
-    visible : true
+    visible : false
 }
 
 // create action (post method)
@@ -61,7 +61,7 @@ const formSlice =  createSlice({
         })
         builder.addCase(submitForm.fulfilled, (state, action)=>{
             state.loading = false
-            state.user = action.payload
+            state.user = [...state.user, action.payload ]
             state.error = ""
         })
         builder.addCase(submitForm.rejected, (state, action)=>{

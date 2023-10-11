@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { showForm, submitForm } from '../features/formSlice'
+import { getUsers, showForm, submitForm } from '../features/formSlice'
 import { Link, useNavigate } from 'react-router-dom'
 import style from "./CreateForm.module.css"
 
@@ -73,7 +73,7 @@ const CreateForm = () => {
         e.preventDefault()
         if (validateForm()) {
             dispatch(submitForm(inputValue))
-            setInputValue({ name: "", role: "", email: "", gender: "" });
+            setInputValue({ name: "", role: "", email: "", gender: "" })
             navigate("/")
         }
     }
