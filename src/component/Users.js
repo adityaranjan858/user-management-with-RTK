@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteUser, getUsers } from "../features/formSlice";
+import { deleteUser, getUsers, showForm } from "../features/formSlice";
 import { Link } from "react-router-dom";
 import style from "./Users.module.css";
 
@@ -20,7 +20,7 @@ const Users = () => {
   return (
     <>
       <div className="container">
-    <Link className="bg-primary text-white py-2 px-3 rounded-pill text-decoration-none fw-semibold " to="/createform"> <i className="fa-solid fa-user-plus"></i> Create User</Link>
+    <Link className="bg-primary text-white py-2 px-3 rounded-pill text-decoration-none fw-semibold" to="/createform" onClick={() => dispatch(showForm(true))}> <i className="fa-solid fa-user-plus"></i> Create User</Link>
       <h4 className="text-center text-decoration-underline text-white ">User Details</h4>
         <div className="row justify-content-center ">
 

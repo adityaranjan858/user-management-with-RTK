@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate, useParams } from 'react-router-dom'
-import { updateUser } from '../features/formSlice'
+import { Link, useNavigate, useParams } from 'react-router-dom'
+import { showForm, updateUser } from '../features/formSlice'
 
 const UpdateUser = () => {
     const [inputValue, setInputValue] = useState(({
@@ -10,6 +10,7 @@ const UpdateUser = () => {
         email: "",
         gender: ""
     }))
+
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const userDetails = useSelector(state => state.userDetails)
@@ -77,7 +78,7 @@ const UpdateUser = () => {
                 </div>
                 <div className='mt-5 d-flex justify-content-center'>
                     <button type="submit" className="btn btn-primary px-5">Submit</button>
-                    <button type="submit" className="btn btn-primary px-5 mx-4">Cancel</button>
+                    <Link to="/" className="btn btn-primary px-5 mx-4" onClick={() => dispatch(showForm(false))} >Cancel</Link>
                 </div>
             </form>
         </>

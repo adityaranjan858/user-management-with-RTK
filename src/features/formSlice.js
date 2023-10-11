@@ -5,7 +5,8 @@ const initialState = {
     user : [],
     loading : false,
     error : "",
-    searchData : []
+    searchData : [],
+    visible : true
 }
 
 // create action (post method)
@@ -47,7 +48,11 @@ const formSlice =  createSlice({
     reducers : {
         searchUser : (state, action)=>{
             state.searchData = action.payload
+        },
+        showForm : (state, action)=>{
+            state.visible= action.payload
         }
+
     },
     extraReducers : (builder)=>{
         // submit form
@@ -112,5 +117,5 @@ const formSlice =  createSlice({
     }
 })
 
-export const {searchUser} = formSlice.actions
+export const {searchUser,showForm} = formSlice.actions
 export default formSlice.reducer
