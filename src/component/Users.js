@@ -42,8 +42,9 @@ const Users = () => {
                 }
               }).map((data) => (
                 <div key={data.id} className="col-md-6 col-md-6 col-xl-3 my-2 text-center">
-                  <div className="card" style={{ backgroundColor: "#42607d" , color: "white"}}>                  
-                    <div className="card-body">
+                  <div className="card h-100" style={{ backgroundColor: "#42607d" , color: "white"}}>                  
+                    <div className="card-body d-flex flex-column justify-content-between">
+                      <div>
                       <h5 className="card-title mb-5">{data.name}</h5>
                       <h6 className="card-subtitle mb-2 ">
                         {data.email}
@@ -52,6 +53,7 @@ const Users = () => {
                         {data.role}
                       </h6>
                       <p className="card-text">{data.gender}</p>
+                      </div>
                       <div className="d-flex justify-content-between">
                         <Link to={`/update/${data.id}`} className={style.edit_btn}>
                           <i className="fa-solid fa-pen-to-square"></i>
