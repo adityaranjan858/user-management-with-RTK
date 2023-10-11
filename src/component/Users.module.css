@@ -1,0 +1,14 @@
+.del_btn{
+    background-color: red;
+    color: black;
+    padding: 1px 15px;
+    border-radius: 6px;
+}
+.edit_btn{
+    background-color: #ffac1b;
+    color: black;
+    padding: 1px 15px;
+    border-radius: 6px;
+}
+
+

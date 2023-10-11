@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import CreateForm from './component/CreateForm';
+import Navbar from './component/Navbar';
+import Users from './component/Users';
+import UpdateUser from './component/UpdateUser';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar/>
+      <h3 className='text-capitalize d-flex justify-content-center mb-5 mt-2' style={{color: "#45eafd"}}>User Management with Redux Toolkit - API Integration</h3>
+      <Routes>
+        <Route exact path="/" element={<Users/>} />
+        <Route exact path="/createform" element={<CreateForm/>} />
+        <Route exact path="/users" element={<Users/>} />
+        <Route exact path="/update/:id" element={<UpdateUser/>} />
+      </Routes>
     </div>
   );
 }
