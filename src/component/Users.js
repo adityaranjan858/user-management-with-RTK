@@ -16,13 +16,12 @@ const Users = () => {
     e.preventDefault()
     dispatch(deleteUser(userId))
   };
-  console.log(userDetails.user)
 
   return (
     <>
       <div className="container">
-    <Link className="bg-primary text-white py-2 px-3 rounded-pill text-decoration-none fw-semibold" to="/createform" onClick={() => dispatch(showForm(true))}> <i className="fa-solid fa-user-plus"></i> Create User</Link>
-      <h4 className="text-center text-decoration-underline text-white ">User Details</h4>
+        <Link className="bg-primary text-white py-2 px-3 rounded-pill text-decoration-none fw-semibold" to="/createform" onClick={() => dispatch(showForm(true))}> <i className="fa-solid fa-user-plus"></i> Create User</Link>
+        <h4 className="text-center text-decoration-underline text-white ">User Details</h4>
         <div className="row justify-content-center ">
 
           {userDetails.loading ? (
@@ -33,7 +32,7 @@ const Users = () => {
             ) : (
 
               Array.isArray(userDetails.user) && userDetails.user.length > 0 &&
-              userDetails.user.filter(findData =>{
+              userDetails.user.filter(findData => {
                 if (userDetails.searchData.length === 0) {
                   return findData
                 } else {
@@ -42,17 +41,17 @@ const Users = () => {
                 }
               }).map((data) => (
                 <div key={data.id} className="col-md-6 col-md-6 col-xl-3 my-2 text-center">
-                  <div className="card h-100" style={{ backgroundColor: "#42607d" , color: "white"}}>                  
+                  <div className="card h-100" style={{ backgroundColor: "#42607d", color: "white" }}>
                     <div className="card-body d-flex flex-column justify-content-between">
                       <div>
-                      <h5 className="card-title mb-5">{data.name}</h5>
-                      <h6 className="card-subtitle mb-2 ">
-                        {data.email}
-                      </h6>
-                      <h6 className="card-subtitle mb-2">
-                        {data.role}
-                      </h6>
-                      <p className="card-text">{data.gender}</p>
+                        <h5 className="card-title mb-5">{data.name}</h5>
+                        <h6 className="card-subtitle mb-2 ">
+                          {data.email}
+                        </h6>
+                        <h6 className="card-subtitle mb-2">
+                          {data.role}
+                        </h6>
+                        <p className="card-text">{data.gender}</p>
                       </div>
                       <div className="d-flex justify-content-between">
                         <Link to={`/update/${data.id}`} className={style.edit_btn}>
@@ -60,7 +59,7 @@ const Users = () => {
                         </Link>
                         <Link
                           to=""
-                          onClick={(e) => handleDeleteUser(e,data.id)}
+                          onClick={(e) => handleDeleteUser(e, data.id)}
                           className={style.del_btn}
                         >
                           <i className="fa-solid fa-trash-can"></i>

@@ -31,9 +31,21 @@ const UpdateUser = () => {
     }
 
     const inputValueHandler = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;
+        let capitalizeValue = value;
+
+        if(name === "name" || name === "role"){
+            const words = value.split(" ");
+            const capitalizedWords = words.map(word => {
+                return word.charAt(0).toUpperCase() + word.slice(1);
+            });
+            capitalizeValue = capitalizedWords.join(" ");
+        }
+
         setInputValue({
             ...inputValue,
-            [e.target.name]: e.target.value,
+            [name]: capitalizeValue,
         });
     };
 
@@ -56,22 +68,22 @@ const UpdateUser = () => {
                 <div className='d-flex mt-3'>
                     <div className="form-check">
                         <label className="form-check-label">
-                            <input type="radio" className="form-check-input" name="gender" id="" value="male"
-                                checked={inputValue && inputValue.gender === "male"} onChange={inputValueHandler} />
+                            <input type="radio" className="form-check-input" name="gender" id="" value="Male"
+                                checked={inputValue && inputValue.gender === "Male"} onChange={inputValueHandler} />
                             Male
                         </label>
                     </div>
                     <div className="form-check ms-2">
                         <label className="form-check-label">
-                            <input type="radio" className="form-check-input" name="gender" id="" value="female"
-                                checked={inputValue && inputValue.gender === "female"} onChange={inputValueHandler} />
+                            <input type="radio" className="form-check-input" name="gender" id="" value="Female"
+                                checked={inputValue && inputValue.gender === "Female"} onChange={inputValueHandler} />
                             Female
                         </label>
                     </div>
                     <div className="form-check ms-2">
                         <label className="form-check-label">
-                            <input type="radio" className="form-check-input" name="gender" id="" value="others"
-                                checked={inputValue && inputValue.gender === "others"} onChange={inputValueHandler} />
+                            <input type="radio" className="form-check-input" name="gender" id="" value="Others"
+                                checked={inputValue && inputValue.gender === "Others"} onChange={inputValueHandler} />
                             Others
                         </label>
                     </div>
