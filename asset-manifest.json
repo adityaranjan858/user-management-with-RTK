@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/user-management-with-RTK/static/css/main.5b2eda2b.css",
-    "main.js": "/user-management-with-RTK/static/js/main.6cbf3389.js",
+    "main.js": "/user-management-with-RTK/static/js/main.2962d8a7.js",
     "static/js/787.315cbc65.chunk.js": "/user-management-with-RTK/static/js/787.315cbc65.chunk.js",
     "index.html": "/user-management-with-RTK/index.html",
     "main.5b2eda2b.css.map": "/user-management-with-RTK/static/css/main.5b2eda2b.css.map",
-    "main.6cbf3389.js.map": "/user-management-with-RTK/static/js/main.6cbf3389.js.map",
+    "main.2962d8a7.js.map": "/user-management-with-RTK/static/js/main.2962d8a7.js.map",
     "787.315cbc65.chunk.js.map": "/user-management-with-RTK/static/js/787.315cbc65.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5b2eda2b.css",
-    "static/js/main.6cbf3389.js"
+    "static/js/main.2962d8a7.js"
   ]
 }
